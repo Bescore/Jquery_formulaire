@@ -1,0 +1,21 @@
+.container{
+    margin-top:10%;
+    width:80% !important;
+}
+
+.wrong{
+    background-color: rgb(211, 98, 98) !important;
+}
+.good{
+    background-color: rgb(80, 168, 36) !important;
+}
+span{
+    display: inline-block;
+    margin: 0 3px;
+}
+#alert{
+    display: none;
+}
+#alert_max{
+    display: none;
+}
