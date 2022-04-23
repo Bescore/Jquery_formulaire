@@ -43,10 +43,10 @@ $( "#message" ).keydown( function () {
         $( "#message" ).removeClass( 'good' )
         $( "#message" ).addClass( 'wrong' )
         $( "#alert_max" ).css( { "display": "block", "margin-top": "10px" } )
-        $( "#alert" ).css( { "display": "none","margin-top": "10px"} )
+        $( "#alert" ).css( { "display": "none", "margin-top": "10px" } )
     } else {
-        $( "#alert_max" ).css( { "display": "none","margin-top": "10px"} )
-        $( "#alert" ).css( { "display": "block","margin-top": "10px"} )
+        $( "#alert_max" ).css( { "display": "none", "margin-top": "10px" } )
+        $( "#alert" ).css( { "display": "block", "margin-top": "10px" } )
         $( "#message" ).removeClass( 'wrong' )
         $( "#message" ).addClass( 'good' )
     }
@@ -54,25 +54,37 @@ $( "#message" ).keydown( function () {
 } )
 
 //Nous contacter//
-var put1= document.querySelector('#Input1')
-var put2= document.querySelector('#Input2')
-var put3= document.querySelector('#Input3')
-var put4= document.querySelector('#Input4')
-var mess= document.querySelector('#message')
-function hideBtn( param ) {
+var put1 = document.querySelector( '#Input1' )
+var put2 = document.querySelector( '#Input2' )
+var put3 = document.querySelector( '#Input3' )
+var put4 = document.querySelector( '#Input4' )
+var mess = document.querySelector( '#message' )
+
+
+
+
+
+function hideBtn ( param ) {
     param.addEventListener( "keyup", function () {
-        
+
         if ( Object.values( param.classList ).includes( 'good' ) == false ) {
             $( '#submit' ).prop( "disabled", true )
         } else {
             $( '#submit' ).prop( "disabled", false )
         }
-        
     } )
+}
+hideBtn( put1 )
+hideBtn( put2 )
+hideBtn( put3 )
+hideBtn( put4 )
+hideBtn( mess )
 
-}   
-hideBtn(put1)  
-hideBtn(put2)  
-hideBtn(put3)  
-hideBtn(put4)  
-hideBtn( mess )  
+//message après clique//
+$('#confirm').css("display", "none")
+$( "#submit" ).click( function () {
+    $( ".container" ).css( "opacity", "0" )
+    $( '#confirm' ).css( { "display": "block","padding":"50px"} )
+    setTimeout( () => { $( ".container" ).css( "opacity", "1" ) }, 5000 )
+    setTimeout( () => { $( '#confirm' ).css( "display", "none" ) }, 5000 )
+} )
