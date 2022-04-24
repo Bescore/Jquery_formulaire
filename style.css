@@ -7,7 +7,7 @@
 	}
 }
 .flash {
-	animation: 4s run ease infinite;
+	animation: 3s run ease infinite;
 	display: flex;
 	justify-content: center;
 	align-items: center;
