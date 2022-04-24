@@ -1,15 +1,13 @@
 @keyframes run {
 	0% {
 		transform: translateX(-50%);
-		opacity: 0.5;
 	}
 	100% {
 		transform: translateX(110%);
-		opacity: 1;
 	}
 }
 .flash {
-	animation: 2s run ease infinite;
+	animation: 4s run ease infinite;
 	display: flex;
 	justify-content: center;
 	align-items: center;
