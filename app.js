@@ -62,29 +62,31 @@ var mess = document.querySelector( '#message' )
 
 
 
+$( '#submit' ).prop( "disabled", true ) 
 
-
-function hideBtn ( param ) {
-    param.addEventListener( "keyup", function () {
-
-        if ( Object.values( param.classList ).includes( 'good' ) == false ) {
-            $( '#submit' ).prop( "disabled", true )
-        } else {
+for (let i = 0; i < document.querySelectorAll("Input[type=text]").length; i++) {
+    const element0 = document.querySelectorAll( "Input[type=text]" )[0].classList;
+    const element1 = document.querySelectorAll( "Input[type=text]" )[ 1 ].classList;
+    const element2 = document.querySelectorAll( "Input[type=text]" )[ 2 ].classList;
+    const element3 = document.querySelectorAll( "Input[type=text]" )[ 3 ].classList;
+    
+    mess.addEventListener("keyup",function doIt() {
+        if (Object.values( element0).includes('good')  && Object.values( element1).includes('good') && Object.values( element2).includes('good') && Object.values( element3).includes('good') && Object.values(mess.classList).includes('good') ) {
             $( '#submit' ).prop( "disabled", false )
         }
-    } )
+    })
+    
+    break
+    
 }
-hideBtn( put1 )
-hideBtn( put2 )
-hideBtn( put3 )
-hideBtn( put4 )
-hideBtn( mess )
+
 
 //message après clique//
 $('#confirm').css("display", "none")
 $( "#submit" ).click( function () {
     $( ".container" ).css( "opacity", "0" )
-    $( '#confirm' ).css( { "display": "block","padding":"50px"} )
+    $( '#confirm' ).css( { "display": "block", "padding": "50px" } ),
+    $( '.flash' ).css( { "display": "block"} )
     setTimeout( () => { $( ".container" ).css( "opacity", "1" ) }, 5000 )
-    setTimeout( () => { $( '#confirm' ).css( "display", "none" ) }, 5000 )
+    setTimeout( () => { $( '#confirm' ).css( "display", "none" ),$( '.flash' ).css( "display", "none" ) }, 5000 )
 } )
