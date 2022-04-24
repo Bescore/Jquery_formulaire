@@ -1,13 +1,15 @@
 @keyframes run {
 	0% {
-		transform: translateX(-100%);
+		transform: translateX(-50%);
+		opacity: 0.5;
 	}
 	100% {
 		transform: translateX(110%);
+		opacity: 1;
 	}
 }
 .flash {
-	animation: 4s run ease-in-out infinite;
+	animation: 2s run ease infinite;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,7 +18,7 @@
 
 #confirm {
 	text-align: center;
-	margin: 200px auto;
+	margin: auto auto;
 	font-size: 20px;
 }
 .container {
