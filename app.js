@@ -84,9 +84,9 @@ for (let i = 0; i < document.querySelectorAll("Input[type=text]").length; i++) {
 //message après clique//
 $('#confirm').css("display", "none")
 $( "#submit" ).click( function () {
-    $( ".container" ).css( "opacity", "0" )
+    $( ".container" ).css( "display", "none" )
     $( '#confirm' ).css( { "display": "block", "padding": "50px" } ),
     $( '.flash' ).css( { "display": "block"} )
-    setTimeout( () => { $( ".container" ).css( "opacity", "1" ) }, 5000 )
+    setTimeout( () => { $( ".container" ).css( "display", "block" ) }, 5000 )
     setTimeout( () => { $( '#confirm' ).css( "display", "none" ),$( '.flash' ).css( "display", "none" ) }, 5000 )
 } )
